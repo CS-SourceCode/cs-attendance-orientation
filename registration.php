@@ -25,6 +25,8 @@ session_start();
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <script src="js/ckeditor.js"></script>
+        <script type="text/javascript">
+        </script>
         <!-- <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script> -->
     </head>
 
@@ -50,7 +52,7 @@ session_start();
         
         <div class="container">
             <div class="jumbotron">
-                <h1 id="currEvent" name="currEvent"><?php echo $_SESSION["currEvent"];?></h1>
+                <h1 id="currEvent" name="currEvent">CS Orientation</h1>
                 <p>
                 <div class="container">
                     <div class="row">
@@ -58,11 +60,11 @@ session_start();
                         <div class="col-md-11">
                             <div class="form-group">
                                 <label for="studbarcode">Student ID Number:</label>
-                                <input type="text" class="form-control" name="studbarcode" id="studbarcode">
+                                <input type="text" class="form-control" name="studbarcode" id="studbarcode" autofocus>
                             </div>
                         </div>
                         <div class="col-md-1">
-                            <button type="submit" name="submitAttendance" class="btn btn-primary" data-toggle="modal" data-target=".voteshirt">Enter</button>
+                            <button type="submit" name="submitAttendance" class="btn btn-primary" data-toggle="" data-target="">Enter</button>
                         </div>
                     </form>
                     </div>

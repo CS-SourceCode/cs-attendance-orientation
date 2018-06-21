@@ -41,7 +41,7 @@
             <br>
             <div class="row">
                 <div class="col-md-4">
-                <div class="thumbnail">
+                <div class="thumbnail test">
                     <a href="/w3images/lights.jpg" target="_blank">
                     <img src="images/blankshirt.jpg" alt="Lights" style="width:80%">
                     <div class="caption">
@@ -158,12 +158,36 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button name="submitEvent" type="submit" class="btn btn-primary">Vote</button>
+                        <button name="submitEvent" type="submit" class="btn btn-primary voteClassName">Vote</button>
                     </div>
                 </form>
                 </div>
             </div>
         </div>
+
+        <script>
+        //TODO fix shirt id
+            'use strict';
+            let tests = document.querySelectorAll('.thumbnail');
+            let shirtID = 1;
+            for(let test of tests){
+                test.insertAdjacentHTML('afterend', '<input id = shirtID name = "buttonTest" type="radio"><br>');
+                shirtID ++;
+            }
+            
+            $(document).ready(){
+                document.querySelector('.voteClassName').on("submit",function(){
+                    $.ajax({
+                        url: "shirt.php",
+                        method: "POST",
+                        data: {voteCount: voteCount++, id: $('#shirtID').val()}
+                    }).done(function(res){
+                        console.log(res);
+                    });
+                });
+            }
+            
+        </script>
 
     </body>
 
